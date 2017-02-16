@@ -7,13 +7,6 @@ class Lastebil extends Fossilbil {
         this.nyttevekt = nyttevekt;
     }
 
-    public void setNyttevekt(double nyttevekt) {
-        this.nyttevekt = nyttevekt;
-    }
-
-    public double getNyttevekt() {
-        return nyttevekt;
-    }
     @Override
     public void getInfo() {
 	super.getInfo();

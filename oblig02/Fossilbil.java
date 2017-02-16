@@ -8,13 +8,6 @@ abstract class Fossilbil extends Bil {
         this.co2Utslipp = co2Utslipp;
     }
 
-    public void setCo2Utslipp(double co2Utslipp) {
-        this.co2Utslipp = co2Utslipp;
-    }
-
-    public double getCo2Utslipp() {
-        return co2Utslipp;
-    }
     @Override
     public void getInfo() {
 	super.getInfo();

@@ -7,13 +7,6 @@ public class Personbil extends Fossilbil {
         this.antallDorer = antallDorer;
     }
 
-    public void setAntallDorer(int antallDorer) {
-        this.antallDorer = antallDorer;
-    }
-
-    public int getAntallDorer() {
-        return antallDorer;
-    }
     @Override
     public void getInfo() {
 	super.getInfo();

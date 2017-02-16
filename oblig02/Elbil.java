@@ -8,13 +8,6 @@ public class Elbil extends Bil {
         this.batteriKapasitet = batteriKapasitet;
     }
 
-    public void setBatteriKapasitet(double batteriKapasitet) {
-        this.batteriKapasitet = batteriKapasitet;
-    }
-
-    public double getBatteriKapasitet() {
-        return batteriKapasitet;
-    }
     @Override
     public void getInfo() {
 	super.getInfo();
