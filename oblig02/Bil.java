@@ -1,4 +1,4 @@
-public class Bil {
+abstract public class Bil {
 
     private String kjennemerke;
 
