@@ -11,6 +11,6 @@ abstract class Fossilbil extends Bil {
     @Override
     public void getInfo() {
 	super.getInfo();
-	System.out.printf("Motortype: Forbrenningsmotor \nBilen har Co2-utslipp: %f g/km\n", co2Utslipp);
+	System.out.printf("\nMotortype: Forbrenningsmotor \nBilen har Co2-utslipp: %f g/km\n", co2Utslipp);
     }
 }

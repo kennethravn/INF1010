@@ -9,15 +9,15 @@ import java.io.*;
 
 public class Mainmain {
     public static void main(String[] args) throws Exception {
-		File infile;
+		String infile;
 		//try-catch block to prevent program from crashing due to lacking user input
 		try {
-			infile = new File(args[0]);
+			infile = new String(args[0]);
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Give the name of data file: ");
 			Scanner in = new Scanner(System.in); 
-			infile = new File(in.nextLine());
+			infile = new String(in.nextLine());
 		}	
 		ArrayList<Bil> liste = readFile(infile);
 		try { 
@@ -43,16 +43,22 @@ public class Mainmain {
 		
 	}
 	
-	public static ArrayList<Bil> readFile(File inFile) throws Exception {
+	public static ArrayList<Bil> readFile(String infile) throws Exception{
 		ArrayList<Bil> bilListe = new ArrayList<>();
-		Scanner in = new Scanner(inFile);
+	        File hello = new File(infile);
+	       	Scanner in = new Scanner(hello);
+		//	in = infile;
 		double co2;
 
 		while (in.hasNextLine()) {
 			String[] garasje = in.nextLine().split(" ");
-			String bilType = garasje[0];
+		       	String bilType = garasje[0];
 			String skilt = garasje[1];
-			switch (bilType) {
+			//System.out.println(Arrays.toString(garasje));
+			//System.out.println(garasje.length);
+			//	System.out.println(garasje[1]);
+			//System.exit();
+				switch (bilType) {
 
 				case "EL":
 					double batteriKapasitet = Double.parseDouble(garasje[2]);
@@ -73,7 +79,7 @@ public class Mainmain {
 					Lastebil lastebil = new Lastebil(skilt, co2, nytte);
 					bilListe.add(lastebil);
 					break;	
-			}
+				}
 		}
 		//System.out.prinln(bilListe);
 		return bilListe;
@@ -84,7 +90,7 @@ public class Mainmain {
                 elbil.getInfo();
             return elbil;
         }).forEachOrdered((_item) -> {
-            System.out.println(" ");
+		System.out.printf("\n");	
         });
 	}
 
@@ -94,12 +100,12 @@ public class Mainmain {
                     Personbil personbil;
                     personbil = (Personbil) bil;
                     personbil.getInfo();
-                    System.out.println(" ");
+		    System.out.printf("\n");
                 }
                 else if (bil instanceof Lastebil) {
                     Lastebil lastebil = (Lastebil) bil;
                     lastebil.getInfo();
-                    System.out.println(" ");
+		    System.out.printf("\n");
                 }
             });
 	}

@@ -10,6 +10,6 @@ public class Personbil extends Fossilbil {
     @Override
     public void getInfo() {
 	super.getInfo();
-	System.out.printf("Biltype: Personbil \n Antall seter: %d", antallDorer);
+	System.out.printf("Biltype: Personbil \n Antall seter: %d\n", antallDorer);
     }
 }
