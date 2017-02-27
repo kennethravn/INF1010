@@ -9,15 +9,15 @@ import java.io.*;
 
 public class Mainmain {
     public static void main(String[] args) throws Exception {
-		String infile;
+		File infile;
 		//try-catch block to prevent program from crashing due to lacking user input
 		try {
-			infile = new String(args[0]);
+			infile = new File(args[0]);
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Give the name of data file: ");
 			Scanner in = new Scanner(System.in); 
-			infile = new String(in.nextLine());
+			infile = new File(in.nextLine());
 		}	
 		ArrayList<Bil> liste = readFile(infile);
 		try { 
@@ -43,9 +43,9 @@ public class Mainmain {
 		
 	}
 	
-	public static ArrayList<Bil> readFile(String infile) throws Exception{
+	public static ArrayList<Bil> readFile(File infile) throws Exception{
 		ArrayList<Bil> bilListe = new ArrayList<>();
-	        File hello = new File(infile);
+	        File hello = infile;
 	       	Scanner in = new Scanner(hello);
 		//	in = infile;
 		double co2;
@@ -54,8 +54,8 @@ public class Mainmain {
 			String[] garasje = in.nextLine().split(" ");
 		       	String bilType = garasje[0];
 			String skilt = garasje[1];
-			//System.out.println(Arrays.toString(garasje));
-			//System.out.println(garasje.length);
+			System.out.println(Arrays.toString(garasje));
+			System.out.println(garasje.length);
 			//	System.out.println(garasje[1]);
 			//System.exit();
 				switch (bilType) {
